@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rows Privacy Policy</title>
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --ink: #1e2430;
+    --ink-soft: #565f6e;
+    --ink-faint: #8a8f7c;
+    --accent: #2f6f4f;
+    --accent-soft: #e4eee7;
+    --border: #e2dfd6;
+    --row-line: #eae7dd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171b;
+      --surface: #1b1f24;
+      --ink: #ece9e2;
+      --ink-soft: #9aa3ac;
+      --ink-faint: #6b7178;
+      --accent: #6fbf95;
+      --accent-soft: rgba(111, 191, 149, 0.14);
+      --border: #2a2f35;
+      --row-line: #23272c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171b;
+    --surface: #1b1f24;
+    --ink: #ece9e2;
+    --ink-soft: #9aa3ac;
+    --ink-faint: #6b7178;
+    --accent: #6fbf95;
+    --accent-soft: rgba(111, 191, 149, 0.14);
+    --border: #2a2f35;
+    --row-line: #23272c;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "IBM Plex Sans", system-ui, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 46px;
+    margin-bottom: 2rem;
+  }
+  .wordmark span {
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border);
+  }
+  .wordmark span:nth-child(1) { width: 100%; background: var(--accent); }
+  .wordmark span:nth-child(2) { width: 70%; }
+  .wordmark span:nth-child(3) { width: 85%; }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.3rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.5rem;
+  }
+
+  .meta {
+    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 3rem;
+  }
+  .summary p { margin: 0 0 0.6rem; color: var(--ink-soft); font-size: 0.96rem; }
+  .summary p:last-child { margin-bottom: 0; }
+  .summary strong { color: var(--ink); }
+
+  nav.toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--row-line);
+  }
+  nav.toc a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-bottom: 1px solid transparent;
+  }
+  nav.toc a:hover, nav.toc a:focus-visible { color: var(--accent); border-color: var(--accent); }
+
+  section {
+    margin-bottom: 2.6rem;
+    scroll-margin-top: 2rem;
+  }
+
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0 0 0.9rem;
+  }
+  h2 .num {
+    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  p { color: var(--ink-soft); margin: 0 0 0.9rem; max-width: 62ch; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--ink); font-weight: 600; }
+
+  ul { margin: 0 0 0.9rem; padding-left: 1.2rem; color: var(--ink-soft); }
+  li { margin-bottom: 0.4rem; }
+  li::marker { color: var(--accent); }
+
+  .fact-row {
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--row-line);
+    font-size: 0.92rem;
+  }
+  .fact-row:last-child { border-bottom: none; }
+  .fact-row .label { flex: 0 0 190px; color: var(--ink-faint); font-family: "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; padding-top: 0.15rem; }
+  .fact-row .value { color: var(--ink); }
+
+  a.inline { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent-soft); text-underline-offset: 2px; }
+  a.inline:hover { text-decoration-color: var(--accent); }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--row-line);
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 520px) {
+    .fact-row { flex-direction: column; gap: 0.2rem; }
+    .fact-row .label { flex: none; }
+    h1 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="wordmark" aria-hidden="true"><span></span><span></span><span></span></div>
+  <h1>Rows Privacy Policy</h1>
+  <div class="meta">
+    <span>Effective September 13, 2026</span>
+    <span>App: Rows</span>
+    <span>Contact: noahtodd07@icloud.com</span>
+  </div>
+
+  <div class="summary">
+    <p><strong>In one sentence:</strong> Rows keeps everything on your device — it has no servers, no account system, and no analytics, so there is nothing for us to collect.</p>
+    <p>Rows reads Apple Health data (with your permission) to automatically check off habits, and it never sends that data, or anything else about you, anywhere. Subscriptions are billed and managed entirely by Apple.</p>
+  </div>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#collect">1. Information we collect</a>
+    <a href="#health">2. Apple Health data</a>
+    <a href="#subscriptions">3. Subscriptions &amp; purchases</a>
+    <a href="#storage">4. Where your data lives</a>
+    <a href="#sharing">5. Third parties</a>
+    <a href="#rights">6. Your choices &amp; deletion</a>
+    <a href="#children">7. Children's privacy</a>
+    <a href="#changes">8. Changes to this policy</a>
+    <a href="#contact">9. Contact</a>
+  </nav>
+
+  <section id="collect">
+    <h2><span class="num">01</span>Information we collect</h2>
+    <p>Rows does not collect, transmit, or sell any personal data. Every habit, log entry, streak, and setting you create is stored only in the app's local storage on your device (and shared on-device with the Rows widget via an App Group container, so your widget can show the same data). None of it is sent to us or to any third party, because Rows has no backend server to send it to.</p>
+    <p>Rows sends local notifications (reminders, streak nudges) that are scheduled and delivered entirely on your device. It does not use push notifications, so no notification data passes through any server, ours or Apple's.</p>
+  </section>
+
+  <section id="health">
+    <h2><span class="num">02</span>Apple Health data</h2>
+    <p>If you grant permission, Rows reads step count, sleep, workout, and other activity data from Apple Health so it can automatically mark linked habits as complete. This access is read-only in normal use.</p>
+    <div class="fact-row"><div class="label">Data read</div><div class="value">Steps, sleep, workouts, and related activity metrics you choose to link to a habit</div></div>
+    <div class="fact-row"><div class="label">Data written</div><div class="value">None — Rows does not write anything to Apple Health</div></div>
+    <div class="fact-row"><div class="label">Where it goes</div><div class="value">Nowhere. It's read on-device, used to update your habit log on-device, and never transmitted</div></div>
+    <div class="fact-row"><div class="label">Used for advertising?</div><div class="value">No, never</div></div>
+    <p>You can review or revoke Rows' Health access at any time in <strong>Settings → Privacy &amp; Security → Health → Rows</strong> on your device.</p>
+  </section>
+
+  <section id="subscriptions">
+    <h2><span class="num">03</span>Subscriptions &amp; purchases</h2>
+    <p>Rows Premium is an auto-renewable subscription (monthly or yearly) processed entirely through Apple's App Store billing (StoreKit). Rows checks your subscription status on-device using Apple's own transaction records — we never see or store your payment details, billing address, or card information; Apple handles all of that under its own privacy policy.</p>
+    <p>Your subscription automatically renews for the same length and price unless you cancel at least 24 hours before the end of the current period. Manage or cancel anytime in <strong>Settings → [your name] → Subscriptions</strong> on your device.</p>
+  </section>
+
+  <section id="storage">
+    <h2><span class="num">04</span>Where your data lives</h2>
+    <p>All app data — habits, logs, streaks, preferences — is stored locally using on-device storage, plus a local App Group container so the Rows widget can read the same data without a network round-trip. There is no cloud sync and no account to log into, so there is no copy of your data outside your own device(s).</p>
+    <p>Deleting the Rows app deletes this data along with it.</p>
+  </section>
+
+  <section id="sharing">
+    <h2><span class="num">05</span>Third parties</h2>
+    <p>Rows contains no third-party analytics, advertising, or crash-reporting software development kits (SDKs). It makes no network requests at all. We do not share, sell, or disclose any data to third parties, because none passes through our hands in the first place.</p>
+  </section>
+
+  <section id="rights">
+    <h2><span class="num">06</span>Your choices &amp; deletion</h2>
+    <ul>
+      <li><strong>Revoke Health access</strong> anytime in iOS Settings → Privacy &amp; Security → Health.</li>
+      <li><strong>Turn off notifications</strong> anytime in iOS Settings → Notifications → Rows.</li>
+      <li><strong>Delete everything</strong> by deleting the app — since nothing is stored on a server, this removes all Rows data completely and immediately. There is no account to separately request deletion from.</li>
+    </ul>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">07</span>Children's privacy</h2>
+    <p>Rows is not directed at children under 13 and is not listed in the Kids Category. Because Rows collects no data of any kind from any user, it does not knowingly collect personal information from children.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">08</span>Changes to this policy</h2>
+    <p>If Rows' data practices change — for example, if a future version adds sync or an account — this policy will be updated first, with a new effective date above, before that change ships.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">09</span>Contact</h2>
+    <p>Questions about this policy or your data can be sent to <a class="inline" href="mailto:noahtodd07@icloud.com">noahtodd07@icloud.com</a>.</p>
+  </section>
+
+  <footer>Rows is developed independently. This page describes Rows' actual data practices as implemented in the app.</footer>
+</div>
+
+</body>
+</html>
+
