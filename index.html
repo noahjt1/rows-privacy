@@ -3,59 +3,78 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Rows Privacy Policy</title>
 <style>
+  /* Rows design system tokens (green theme, hue 0.36). Flat surfaces, hairline borders, no shadows or gradients. */
   :root {
-    --bg: #f7f5f0;
-    --surface: #ffffff;
-    --ink: #1e2430;
-    --ink-soft: #565f6e;
-    --ink-faint: #8a8f7c;
-    --accent: #2f6f4f;
-    --accent-soft: #e4eee7;
-    --border: #e2dfd6;
-    --row-line: #eae7dd;
+    /* radius */
+    --radius-tiny: 4px;
+    --radius-control: 12px;
+    --radius-card: 28px;
+
+    /* spacing */
+    --space-1: 2px;
+    --space-2: 4px;
+    --space-3: 8px;
+    --space-4: 12px;
+    --space-5: 16px;
+    --space-6: 20px;
+    --space-7: 28px;
+
+    /* strokes and heights */
+    --stroke-hairline: 1px;
+    --height-compact: 44px;
+
+    /* colour roles: light */
+    --surface-page: #E6F7E9;
+    --surface-card: #F2FCF4;
+    --surface-raised: #FBFFFC;
+    --border: rgba(98, 140, 105, 0.18);
+    --text: #102914;
+    --text-muted: #4B6B50;
+    --accent: #20802F;
+    --text-on-accent: #F5FCF6;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #14171b;
-      --surface: #1b1f24;
-      --ink: #ece9e2;
-      --ink-soft: #9aa3ac;
-      --ink-faint: #6b7178;
-      --accent: #6fbf95;
-      --accent-soft: rgba(111, 191, 149, 0.14);
-      --border: #2a2f35;
-      --row-line: #23272c;
+      --surface-page: #0C120D;
+      --surface-card: #172119;
+      --surface-raised: #243026;
+      --border: rgba(217, 255, 223, 0.14);
+      --text: #E1F5E4;
+      --text-muted: #9DB2A1;
+      --accent: #73E685;
+      --text-on-accent: #0A1A0D;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #14171b;
-    --surface: #1b1f24;
-    --ink: #ece9e2;
-    --ink-soft: #9aa3ac;
-    --ink-faint: #6b7178;
-    --accent: #6fbf95;
-    --accent-soft: rgba(111, 191, 149, 0.14);
-    --border: #2a2f35;
-    --row-line: #23272c;
+    --surface-page: #0C120D;
+    --surface-card: #172119;
+    --surface-raised: #243026;
+    --border: rgba(217, 255, 223, 0.14);
+    --text: #E1F5E4;
+    --text-muted: #9DB2A1;
+    --accent: #73E685;
+    --text-on-accent: #0A1A0D;
   }
 
   * { box-sizing: border-box; }
 
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "IBM Plex Sans", system-ui, sans-serif;
-    line-height: 1.6;
-    font-size: 16px;
+    background: var(--surface-page);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    font-size: 17px;          /* type.body */
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
   }
 
   .page {
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 4rem 1.5rem 6rem;
+    padding: var(--space-7) var(--space-5) calc(var(--space-7) * 2);
   }
 
   .wordmark {
@@ -63,121 +82,163 @@
     flex-direction: column;
     gap: 5px;
     width: 46px;
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-6);
   }
   .wordmark span {
     display: block;
     height: 6px;
-    border-radius: 3px;
+    border-radius: var(--radius-tiny);
     background: var(--border);
   }
   .wordmark span:nth-child(1) { width: 100%; background: var(--accent); }
   .wordmark span:nth-child(2) { width: 70%; }
   .wordmark span:nth-child(3) { width: 85%; }
 
+  /* type.display */
   h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 2.3rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.5rem;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-3);
   }
 
+  /* type.caption */
   .meta {
-    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
-    font-size: 0.78rem;
-    color: var(--ink-faint);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
     display: flex;
-    gap: 1.5rem;
     flex-wrap: wrap;
-    margin-bottom: 2.5rem;
+    gap: var(--space-2) var(--space-5);
+    margin: 0 0 var(--space-7);
+    font-size: 12px;
+    color: var(--text-muted);
   }
 
-  .summary {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 8px;
-    padding: 1.4rem 1.6rem;
-    margin-bottom: 3rem;
+  /* Cards: surface.card, hairline border, radius.card, space.5 padding */
+  .card {
+    background: var(--surface-card);
+    border: var(--stroke-hairline) solid var(--border);
+    border-radius: var(--radius-card);
+    padding: var(--space-5);
   }
-  .summary p { margin: 0 0 0.6rem; color: var(--ink-soft); font-size: 0.96rem; }
-  .summary p:last-child { margin-bottom: 0; }
-  .summary strong { color: var(--ink); }
 
+  .summary { margin-bottom: var(--space-7); }
+  .summary .tag {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--text-on-accent);
+    border-radius: var(--radius-control);
+    padding: var(--space-2) var(--space-4);
+    margin-bottom: var(--space-4);
+    font-size: 13px;          /* type.footnote, semibold */
+    font-weight: 600;
+  }
+  .summary p { color: var(--text); }
+
+  /* Contents: solid chips, 44pt tap height */
   nav.toc {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem 1.2rem;
-    margin-bottom: 3.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--row-line);
+    gap: var(--space-3);
+    margin-bottom: var(--space-7);
   }
   nav.toc a {
-    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--height-compact);
+    padding: 0 var(--space-5);
+    background: var(--surface-card);
+    border: var(--stroke-hairline) solid var(--border);
+    border-radius: var(--radius-control);
+    color: var(--text);
     text-decoration: none;
-    font-size: 0.85rem;
-    border-bottom: 1px solid transparent;
+    font-size: 15px;          /* type.secondary */
   }
-  nav.toc a:hover, nav.toc a:focus-visible { color: var(--accent); border-color: var(--accent); }
+  nav.toc a:hover { background: var(--surface-raised); }
+  nav.toc a:focus-visible, a.inline:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
 
   section {
-    margin-bottom: 2.6rem;
-    scroll-margin-top: 2rem;
+    margin-bottom: var(--space-7);
+    scroll-margin-top: var(--space-7);
   }
 
+  /* type.title */
   h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.3rem;
-    font-weight: 600;
     display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    margin: 0 0 0.9rem;
+    align-items: center;
+    gap: var(--space-4);
+    margin: 0 0 var(--space-4);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
   }
   h2 .num {
-    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
-    font-size: 0.85rem;
-    color: var(--accent);
-    font-weight: 500;
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 var(--space-3);
+    background: var(--accent);
+    color: var(--text-on-accent);
+    border-radius: var(--radius-control);
+    font-size: 12px;
+    font-weight: 600;
   }
 
-  p { color: var(--ink-soft); margin: 0 0 0.9rem; max-width: 62ch; }
+  p { margin: 0 0 var(--space-4); color: var(--text-muted); }
   p:last-child { margin-bottom: 0; }
-  strong { color: var(--ink); font-weight: 600; }
+  strong { color: var(--text); font-weight: 600; }
 
-  ul { margin: 0 0 0.9rem; padding-left: 1.2rem; color: var(--ink-soft); }
-  li { margin-bottom: 0.4rem; }
+  ul { margin: 0 0 var(--space-4); padding-left: var(--space-6); color: var(--text-muted); }
+  ul:last-child { margin-bottom: 0; }
+  li { margin-bottom: var(--space-3); }
+  li:last-child { margin-bottom: 0; }
   li::marker { color: var(--accent); }
 
-  .fact-row {
+  /* Fact rows: surface.raised items sitting on the card */
+  .facts {
     display: flex;
-    gap: 0.9rem;
-    padding: 0.7rem 0;
-    border-bottom: 1px solid var(--row-line);
-    font-size: 0.92rem;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin: var(--space-4) 0;
   }
-  .fact-row:last-child { border-bottom: none; }
-  .fact-row .label { flex: 0 0 190px; color: var(--ink-faint); font-family: "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; padding-top: 0.15rem; }
-  .fact-row .value { color: var(--ink); }
+  .fact-row {
+    background: var(--surface-raised);
+    border: var(--stroke-hairline) solid var(--border);
+    border-radius: var(--radius-control);
+    padding: var(--space-4) var(--space-5);
+    display: flex;
+    gap: var(--space-5);
+    font-size: 15px;          /* type.secondary */
+  }
+  .fact-row .label {
+    flex: 0 0 150px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .fact-row .value { color: var(--text); }
 
-  a.inline { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent-soft); text-underline-offset: 2px; }
-  a.inline:hover { text-decoration-color: var(--accent); }
+  a.inline {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
+  /* type.caption */
   footer {
-    margin-top: 3.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--row-line);
-    font-size: 0.82rem;
-    color: var(--ink-faint);
+    margin-top: var(--space-7);
+    font-size: 12px;
+    color: var(--text-muted);
   }
 
   @media (max-width: 520px) {
-    .fact-row { flex-direction: column; gap: 0.2rem; }
+    h1 { font-size: 30px; }
+    .fact-row { flex-direction: column; gap: var(--space-2); }
     .fact-row .label { flex: none; }
-    h1 { font-size: 1.9rem; }
   }
 </style>
 </head>
@@ -192,8 +253,9 @@
     <span>Contact: noahtodd07@icloud.com</span>
   </div>
 
-  <div class="summary">
-    <p><strong>In one sentence:</strong> Rows has no servers, no account system, and no analytics, so I never see your data. It lives on your device and syncs between your devices through your own private iCloud.</p>
+  <div class="card summary">
+    <span class="tag">In one sentence</span>
+    <p>Rows has no servers, no account system, and no analytics, so I never see your data. It lives on your device and syncs between your devices through your own private iCloud.</p>
     <p>Rows reads Apple Health data (with your permission) to automatically check off habits. It only reads, never writes, and never sends your Health data to me or anyone else. Subscriptions are billed and managed entirely by Apple.</p>
   </div>
 
@@ -209,29 +271,31 @@
     <a href="#contact">9. Contact</a>
   </nav>
 
-  <section id="collect">
+  <section id="collect" class="card">
     <h2><span class="num">01</span>Information we collect</h2>
     <p>Rows does not collect, transmit, or sell any personal data. Every habit, log entry, streak, and setting you create is stored in the app's local storage on your device (and shared on-device with the Rows widget via an App Group container, so your widget can show the same data). If you are signed in to iCloud, it is also synced between your devices through your private iCloud space (see section 4). None of it is sent to me or to any third party, because Rows has no backend server of its own to send it to.</p>
     <p>Rows sends local notifications (reminders, streak nudges) that are scheduled and delivered entirely on your device. It does not use push notifications to message you. Apple's iCloud service may send silent background updates to keep your devices in sync, which carry no message content.</p>
   </section>
 
-  <section id="health">
+  <section id="health" class="card">
     <h2><span class="num">02</span>Apple Health data</h2>
     <p>If you grant permission, Rows reads step count, sleep, workout, and other activity data from Apple Health so it can automatically mark linked habits as complete. This access is read-only in normal use.</p>
-    <div class="fact-row"><div class="label">Data read</div><div class="value">Steps, sleep, workouts, and related activity metrics you choose to link to a habit</div></div>
-    <div class="fact-row"><div class="label">Data written</div><div class="value">None — Rows does not write anything to Apple Health</div></div>
-    <div class="fact-row"><div class="label">Where it goes</div><div class="value">Not sent to me or to any third party. It's read on-device and used to update your habit log. Rows does not copy your step counts, sleep, or other Health measurements into iCloud. For habits matched to a workout, a record of which workout was matched is part of your synced data (see section 4)</div></div>
-    <div class="fact-row"><div class="label">Used for advertising?</div><div class="value">No, never. It is not used for advertising, marketing, or data mining</div></div>
+    <div class="facts">
+      <div class="fact-row"><div class="label">Data read</div><div class="value">Steps, sleep, workouts, and related activity metrics you choose to link to a habit</div></div>
+      <div class="fact-row"><div class="label">Data written</div><div class="value">None — Rows does not write anything to Apple Health</div></div>
+      <div class="fact-row"><div class="label">Where it goes</div><div class="value">Not sent to me or to any third party. It's read on-device and used to update your habit log. Rows does not copy your step counts, sleep, or other Health measurements into iCloud. For habits matched to a workout, a record of which workout was matched is part of your synced data (see section 4)</div></div>
+      <div class="fact-row"><div class="label">Used for advertising?</div><div class="value">No, never. It is not used for advertising, marketing, or data mining</div></div>
+    </div>
     <p>You can review or revoke Rows' Health access at any time in the Apple Health app under <strong>Sharing → Apps → Rows</strong>, or in <strong>Settings → Privacy &amp; Security → Health → Rows</strong> on your device.</p>
   </section>
 
-  <section id="subscriptions">
+  <section id="subscriptions" class="card">
     <h2><span class="num">03</span>Subscriptions &amp; purchases</h2>
     <p>Rows Premium is an auto-renewable subscription (monthly or yearly) processed entirely through Apple's App Store billing (StoreKit). Rows checks your subscription status on-device using Apple's own transaction records — we never see or store your payment details, billing address, or card information; Apple handles all of that under its own privacy policy.</p>
     <p>Your subscription automatically renews for the same length and price unless you cancel at least 24 hours before the end of the current period. Manage or cancel anytime in <strong>Settings → [your name] → Subscriptions</strong> on your device.</p>
   </section>
 
-  <section id="storage">
+  <section id="storage" class="card">
     <h2><span class="num">04</span>Where your data lives &amp; iCloud sync</h2>
     <p>Your habits, logs, streaks, and preferences are stored on your device, plus a local App Group container so the Rows widget can read the same data. There is no Rows account to log into.</p>
     <p><strong>iCloud sync.</strong> Rows syncs your data between your devices using Apple's iCloud (a CloudKit private database tied to your Apple Account). Sync is on whenever you are signed in to iCloud. It includes:</p>
@@ -244,12 +308,12 @@
     <p>Because of sync, deleting the Rows app removes the data from that device only. See section 6 for how to delete your iCloud copy.</p>
   </section>
 
-  <section id="sharing">
+  <section id="sharing" class="card">
     <h2><span class="num">05</span>Third parties</h2>
     <p>Rows contains no third-party analytics, advertising, tracking, or crash-reporting software development kits (SDKs), and it does not track you. I do not operate any servers, and Rows makes no network requests of its own. The only network activity comes from Apple's system services (iCloud sync and App Store purchases). I do not share, sell, or disclose any data to third parties, because none passes through my hands in the first place.</p>
   </section>
 
-  <section id="rights">
+  <section id="rights" class="card">
     <h2><span class="num">06</span>Your choices &amp; deletion</h2>
     <ul>
       <li><strong>Revoke Health access</strong> anytime in the Apple Health app under Sharing → Apps → Rows, or in iOS Settings → Privacy &amp; Security → Health.</li>
@@ -259,17 +323,17 @@
     </ul>
   </section>
 
-  <section id="children">
+  <section id="children" class="card">
     <h2><span class="num">07</span>Children's privacy</h2>
     <p>Rows is not directed at children under 13 and is not listed in the Kids Category. Because Rows does not collect any data from any user, it does not knowingly collect personal information from children.</p>
   </section>
 
-  <section id="changes">
+  <section id="changes" class="card">
     <h2><span class="num">08</span>Changes to this policy</h2>
     <p>If Rows' data practices change — for example, if a future version adds an account or sends data anywhere new — this policy will be updated first, with a new effective date above, before that change ships.</p>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="card">
     <h2><span class="num">09</span>Contact</h2>
     <p>Questions about this policy or your data can be sent to <a class="inline" href="mailto:noahtodd07@icloud.com">noahtodd07@icloud.com</a>.</p>
   </section>
@@ -279,4 +343,3 @@
 
 </body>
 </html>
-
