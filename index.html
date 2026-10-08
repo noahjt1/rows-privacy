@@ -187,21 +187,21 @@
   <div class="wordmark" aria-hidden="true"><span></span><span></span><span></span></div>
   <h1>Rows Privacy Policy</h1>
   <div class="meta">
-    <span>Effective September 13, 2026</span>
+    <span>Effective October 8, 2026</span>
     <span>App: Rows</span>
     <span>Contact: noahtodd07@icloud.com</span>
   </div>
 
   <div class="summary">
-    <p><strong>In one sentence:</strong> Rows keeps everything on your device — it has no servers, no account system, and no analytics, so there is nothing for us to collect.</p>
-    <p>Rows reads Apple Health data (with your permission) to automatically check off habits, and it never sends that data, or anything else about you, anywhere. Subscriptions are billed and managed entirely by Apple.</p>
+    <p><strong>In one sentence:</strong> Rows has no servers, no account system, and no analytics, so I never see your data. It lives on your device and syncs between your devices through your own private iCloud.</p>
+    <p>Rows reads Apple Health data (with your permission) to automatically check off habits. It only reads, never writes, and never sends your Health data to me or anyone else. Subscriptions are billed and managed entirely by Apple.</p>
   </div>
 
   <nav class="toc" aria-label="Sections">
     <a href="#collect">1. Information we collect</a>
     <a href="#health">2. Apple Health data</a>
     <a href="#subscriptions">3. Subscriptions &amp; purchases</a>
-    <a href="#storage">4. Where your data lives</a>
+    <a href="#storage">4. Where your data lives &amp; iCloud sync</a>
     <a href="#sharing">5. Third parties</a>
     <a href="#rights">6. Your choices &amp; deletion</a>
     <a href="#children">7. Children's privacy</a>
@@ -211,8 +211,8 @@
 
   <section id="collect">
     <h2><span class="num">01</span>Information we collect</h2>
-    <p>Rows does not collect, transmit, or sell any personal data. Every habit, log entry, streak, and setting you create is stored only in the app's local storage on your device (and shared on-device with the Rows widget via an App Group container, so your widget can show the same data). None of it is sent to us or to any third party, because Rows has no backend server to send it to.</p>
-    <p>Rows sends local notifications (reminders, streak nudges) that are scheduled and delivered entirely on your device. It does not use push notifications, so no notification data passes through any server, ours or Apple's.</p>
+    <p>Rows does not collect, transmit, or sell any personal data. Every habit, log entry, streak, and setting you create is stored in the app's local storage on your device (and shared on-device with the Rows widget via an App Group container, so your widget can show the same data). If you are signed in to iCloud, it is also synced between your devices through your private iCloud space (see section 4). None of it is sent to me or to any third party, because Rows has no backend server of its own to send it to.</p>
+    <p>Rows sends local notifications (reminders, streak nudges) that are scheduled and delivered entirely on your device. It does not use push notifications to message you. Apple's iCloud service may send silent background updates to keep your devices in sync, which carry no message content.</p>
   </section>
 
   <section id="health">
@@ -220,9 +220,9 @@
     <p>If you grant permission, Rows reads step count, sleep, workout, and other activity data from Apple Health so it can automatically mark linked habits as complete. This access is read-only in normal use.</p>
     <div class="fact-row"><div class="label">Data read</div><div class="value">Steps, sleep, workouts, and related activity metrics you choose to link to a habit</div></div>
     <div class="fact-row"><div class="label">Data written</div><div class="value">None — Rows does not write anything to Apple Health</div></div>
-    <div class="fact-row"><div class="label">Where it goes</div><div class="value">Nowhere. It's read on-device, used to update your habit log on-device, and never transmitted</div></div>
-    <div class="fact-row"><div class="label">Used for advertising?</div><div class="value">No, never</div></div>
-    <p>You can review or revoke Rows' Health access at any time in <strong>Settings → Privacy &amp; Security → Health → Rows</strong> on your device.</p>
+    <div class="fact-row"><div class="label">Where it goes</div><div class="value">Not sent to me or to any third party. It's read on-device and used to update your habit log. Rows does not copy your step counts, sleep, or other Health measurements into iCloud. For habits matched to a workout, a record of which workout was matched is part of your synced data (see section 4)</div></div>
+    <div class="fact-row"><div class="label">Used for advertising?</div><div class="value">No, never. It is not used for advertising, marketing, or data mining</div></div>
+    <p>You can review or revoke Rows' Health access at any time in the Apple Health app under <strong>Sharing → Apps → Rows</strong>, or in <strong>Settings → Privacy &amp; Security → Health → Rows</strong> on your device.</p>
   </section>
 
   <section id="subscriptions">
@@ -232,33 +232,41 @@
   </section>
 
   <section id="storage">
-    <h2><span class="num">04</span>Where your data lives</h2>
-    <p>All app data — habits, logs, streaks, preferences — is stored locally using on-device storage, plus a local App Group container so the Rows widget can read the same data without a network round-trip. There is no cloud sync and no account to log into, so there is no copy of your data outside your own device(s).</p>
-    <p>Deleting the Rows app deletes this data along with it.</p>
+    <h2><span class="num">04</span>Where your data lives &amp; iCloud sync</h2>
+    <p>Your habits, logs, streaks, and preferences are stored on your device, plus a local App Group container so the Rows widget can read the same data. There is no Rows account to log into.</p>
+    <p><strong>iCloud sync.</strong> Rows syncs your data between your devices using Apple's iCloud (a CloudKit private database tied to your Apple Account). Sync is on whenever you are signed in to iCloud. It includes:</p>
+    <ul>
+      <li>your habits and settings (names, goals, colours, reminders, themes);</li>
+      <li>your completion logs, including whether a completion was logged automatically;</li>
+      <li>for habits that use Apple Health workouts, a record of which Apple Health workout was matched to which habit (the workout's identifier, start time, activity type and, in some cases, duration).</li>
+    </ul>
+    <p>Synced data is stored in your private iCloud space. I cannot access it, and Apple's iCloud terms and privacy policy apply to it. You can manage iCloud for Rows in your device's iCloud settings. Rows does not copy your step counts, sleep data, or other Apple Health measurements into iCloud.</p>
+    <p>Because of sync, deleting the Rows app removes the data from that device only. See section 6 for how to delete your iCloud copy.</p>
   </section>
 
   <section id="sharing">
     <h2><span class="num">05</span>Third parties</h2>
-    <p>Rows contains no third-party analytics, advertising, or crash-reporting software development kits (SDKs). It makes no network requests at all. We do not share, sell, or disclose any data to third parties, because none passes through our hands in the first place.</p>
+    <p>Rows contains no third-party analytics, advertising, tracking, or crash-reporting software development kits (SDKs), and it does not track you. I do not operate any servers, and Rows makes no network requests of its own. The only network activity comes from Apple's system services (iCloud sync and App Store purchases). I do not share, sell, or disclose any data to third parties, because none passes through my hands in the first place.</p>
   </section>
 
   <section id="rights">
     <h2><span class="num">06</span>Your choices &amp; deletion</h2>
     <ul>
-      <li><strong>Revoke Health access</strong> anytime in iOS Settings → Privacy &amp; Security → Health.</li>
+      <li><strong>Revoke Health access</strong> anytime in the Apple Health app under Sharing → Apps → Rows, or in iOS Settings → Privacy &amp; Security → Health.</li>
       <li><strong>Turn off notifications</strong> anytime in iOS Settings → Notifications → Rows.</li>
-      <li><strong>Delete everything</strong> by deleting the app — since nothing is stored on a server, this removes all Rows data completely and immediately. There is no account to separately request deletion from.</li>
+      <li><strong>Delete a habit</strong> in Rows: it moves to Deleted Habits, where you can restore it or delete it permanently. Permanently deleting removes its history and linked records.</li>
+      <li><strong>Delete everything</strong>: deleting the app removes Rows' data from that device. Because of iCloud sync, copies can remain in your iCloud and on your other devices. To remove the iCloud copy, open Settings → your name → iCloud → Manage Account Storage → Rows and delete its data. There is no Rows account to separately request deletion from.</li>
     </ul>
   </section>
 
   <section id="children">
     <h2><span class="num">07</span>Children's privacy</h2>
-    <p>Rows is not directed at children under 13 and is not listed in the Kids Category. Because Rows collects no data of any kind from any user, it does not knowingly collect personal information from children.</p>
+    <p>Rows is not directed at children under 13 and is not listed in the Kids Category. Because Rows does not collect any data from any user, it does not knowingly collect personal information from children.</p>
   </section>
 
   <section id="changes">
     <h2><span class="num">08</span>Changes to this policy</h2>
-    <p>If Rows' data practices change — for example, if a future version adds sync or an account — this policy will be updated first, with a new effective date above, before that change ships.</p>
+    <p>If Rows' data practices change — for example, if a future version adds an account or sends data anywhere new — this policy will be updated first, with a new effective date above, before that change ships.</p>
   </section>
 
   <section id="contact">
